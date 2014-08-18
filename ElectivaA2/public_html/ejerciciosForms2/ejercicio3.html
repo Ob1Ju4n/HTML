@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Ejercicio 3</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <h1>Libro de visitas:</h1>
+            <form>
+                <table>
+                    <tr>
+                        <td>Ingrese su nombre:</td>
+                        <td><input type="text" name='nombre'/></td>
+                    </tr>
+                    <tr>
+                        <td>Ingrese su e-mail:</td>
+                        <td><input type="text" name='mail'/></td>
+                    </tr>
+                    <tr>
+                        <td>Seleccione el país de orígen:</td>
+                        <td>
+                            <select name='country'>
+                                <option value="0" selected="selected">--Seleccione una opción--</option>
+                                <option value="1">Argentina</option>
+                                <option value="2">Brasil</option>
+                                <option value="3">Bolivia</option>
+                                <option value="4">Colombia</option>
+                                <option value="5">Paraguay</option>
+                                <option value="6">Perú</option>
+                                <option value="7">Uruguay</option>
+                                <option value="8">Venezuela</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Seleccione la valoración del sitio:</td>
+                        <td>
+                            <select name='evaluation'>
+                                <option value="1" selected="selected">Bueno</option>
+                                <option value="2">Excelente</option>
+                                <option value="3">Malo</option>
+                                <option value="4">Muy bueno</option>
+                                <option value="5">Regular</option>
+                            </select>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Ingrese sus comentarios sobre el sitio:</td>
+                        <td>
+                            <textarea name="comments" rows='5' cols="60"></textarea>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>
