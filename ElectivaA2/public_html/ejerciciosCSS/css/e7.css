@@ -1,0 +1,104 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 1/09/2014, 09:56:33 AM
+    Author     : Luchy
+*/
+
+body {
+    font-family:arial,helvetica,sans-serif;
+    font-size:12px;
+}
+
+.wrapper {
+    width:98%;
+    margin:0px auto;
+    padding:10px;
+    overflow: auto;
+}
+
+.content {
+    width:98%;
+    margin:0px auto;
+    border-style: solid;
+    border-top-width: 4px;
+    border-top-color: gainsboro;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 1px;
+    border-bottom-color: gainsboro;
+    padding: 5px 0px 5px 0px;
+    overflow: auto;
+}
+
+.lNavPane {
+    width: 20%;
+    float: left;
+    max-width: 180px;
+    margin-top: 10px;
+}
+
+.lNavPane div {
+    border:1px solid #bbb;
+    float: bottom;
+    padding:6px;
+    margin-bottom: 4px;
+    text-align: justify;
+}
+
+.newsBox {
+    margin-top: 10px;
+    margin-left:30px;
+    width:60%;
+    float: left;
+    padding:5px;
+    text-align: justify;
+}
+
+.newsBox img {
+    float: left;
+    margin-right: 5px;
+    max-width: 150px;
+    max-height: 120px;
+}
+
+.rNavPane {
+    width: 20%;
+    float: right;
+    max-width: 250px;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-style: solid;
+    border-color: darkred;
+    border-width: 1px;
+}
+
+.rNavPane div {
+    padding:5px;
+    text-align: justify;
+}
+
+.footer {
+    clear: both;
+    width: 98%;
+    border-style: solid;
+    border-top-width: 0px;
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 2px;
+    border-bottom-color: gainsboro;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    overflow: auto;
+    padding:10px;
+}
+
+.footer a+a{
+    border-left: 1px solid darkblue;
+    padding-left: 3px;
+    padding-right: 0px;
+}
