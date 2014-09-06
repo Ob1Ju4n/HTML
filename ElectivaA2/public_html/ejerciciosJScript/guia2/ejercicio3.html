@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Ejercicio 2</title>
+        <title>Ejercicio 3</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script language="JavaScript">
@@ -15,16 +15,18 @@ and open the template in the editor.
             var n3 = prompt('Número 3:');
             var nMedio = 0;
             
-            if( n1 > n2 ){
-                
-            }else ()
+            if( parseInt(n3) > parseInt(n2) && parseInt(n2) > parseInt(n1)
+                    || parseInt(n3) < parseInt(n2) && parseInt(n2) < parseInt(n1) ){
+                nMedio = n2;
+            }else if ( parseInt(n2) > parseInt(n3) && parseInt(n3) > parseInt(n1) 
+                    || parseInt(n2) < parseInt(n3) && parseInt(n3) < parseInt(n1)){
+                nMedio = n3;
+            }else {
+                nMedio = n1;
+            }
             
-            var netoBasico = 48*parseInt(salario);
-            var salarioExtras = hrsExtras*( parseInt(salario)+(parseInt(salario)*0.35) );
-            var salarioSemana = parseInt(netoBasico)+parseInt(salarioExtras);
-            
-            document.write('<table style="text-align:center;" border=1><tr><th>Nombre del empleado</th><th>Sueldo total semana</th></tr>');
-            document.write('<tr><td>'+nombre+'</td><td>$'+salarioSemana+'</td></tr></table>');
+            document.write('<span style="font-weight: bold;">Valor del número medio: </span>');
+            document.write(nMedio);
         </script>
     </head>
 </html>
