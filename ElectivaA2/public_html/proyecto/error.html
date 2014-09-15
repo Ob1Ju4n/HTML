@@ -11,14 +11,6 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="img/favicon.ico" >
         <link rel="stylesheet" href="css/styles.css" type="text/css"/>
-        <script language="JavaScript">
-            var nombre = prompt('Nombre de usuario:');
-            var pwd = prompt('Contraseña:');
-            
-            if( !(nombre === 'Alopez' && pwd === '123*' ) ){
-                    location.href = 'error.html';
-            }
-        </script>
     </head>
     <body>
         
@@ -28,11 +20,8 @@ and open the template in the editor.
                 <img src="img/banner.jpg" alt="banner"/>    
             </header>
             
-            <div id="content" class="contentPane">
-                <button type="submit" value="CINE" id="cine" onclick="location.href = 'cine/cine.html';">CINE</button>
-                <button type="submit" value="CONCIERTOS" id="conciertos">CONCIERTOS</button>
-                <button type="submit" value="DEPORTES" id="deportes">DEPORTES</button>
-                <button type="submit" value="TEATRO" id="teatro">TEATRO</button>
+            <div id="content" class="contentPane" style="text-align: center;">
+                <h1>Usted no esta autorizado para ver esta página.</h1>
             </div>
             
             <footer class="footer">
