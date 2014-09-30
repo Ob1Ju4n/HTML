@@ -11,14 +11,7 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="img/favicon.ico" >
         <link rel="stylesheet" href="css/styles.css" type="text/css"/>
-        <script language="JavaScript">
-            var nombre = prompt('Nombre de usuario:');
-            var pwd = prompt('Contraseña:');
-            
-            if( !(nombre === 'Alopez' && pwd === '123*' ) ){
-                    location.href = 'error.html';
-            }
-        </script>
+        <script type="text/javascript" src="js/javascript.js"></script>
     </head>
     <body>
         
@@ -29,11 +22,23 @@ and open the template in the editor.
             </header>
             
             <div id="content" class="contentPane">
-                <button type="submit" value="CINE" id="cine" onclick="location.href = 'cine/cine.html';">CINE</button>
-                <button type="submit" value="CONCIERTOS" id="conciertos">CONCIERTOS</button>
-                <button type="submit" value="DEPORTES" id="deportes">DEPORTES</button>
-                <button type="submit" value="TEATRO" id="teatro">TEATRO</button>
+                
+                <form id="contentForm">
+                    <div id="cinePane" class="categoryPane">
+                        CINE
+                        <div style="font-size: medium">
+                            <p>El cine (abreviatura de cinematógrafo o cinematografía) es la técnica y arte de proyectar fotogramas de forma rápida y sucesiva para crear la impresión de movimiento, mostrando algún vídeo (o de película, o film, o filme). La palabra «cine» designa también las salas de cine o sala de proyecciones en los cuales se proyectan las películas. Etimológicamente, la palabra «cinematografía» fue un neologismo creado a finales del siglo XIX compuesto a partir de dos palabras griegas. Por un lado κινή (kiné), que significa «movimiento» (ver, entre otras, «cinético», «cinética», «kinesis», «cineteca»); y por otro de γραφóς (grafós). Con ello se intentaba definir el concepto de «imagen en movimiento». Como forma de narrar historias o acontecimientos, el cine es un arte, y comúnmente, considerando las seis artes del mundo clásico, se lo denomina séptimo arte. No obstante, debido a la diversidad de películas y a la libertad de creación, es difícil definir lo que es el cine hoy. Sin embargo, las creaciones cinematográficas que se ocupan de la narrativa, montaje, guionismo, y que en la mayoría de los casos consideran al director como el verdadero autor, son consideradas manifestaciones artísticas, o cine arte (cine de arte). Por otra parte, a la creación documental o periodística se la clasifica según su género. A pesar de esto, y por la participación en documentales y filmes periodísticos de personal con visión propia, única y posiblemente artística (directores, fotógrafos y camarógrafos, entre otros), es muy difícil delimitar la calidad artística de una producción cinematográfica</p>
+                        </div>
+                    </div>
+                    <div id="musicPane" class="categoryPane">MUSICA</div>
+                    <div id="otherPane" class="categoryPane">
+                        TEATRO
+                        
+                    </div>
+                </form>
+                
             </div>
+            
             
             <footer class="footer">
                 <img src="img/footer.jpg" alt="footer"/>    
