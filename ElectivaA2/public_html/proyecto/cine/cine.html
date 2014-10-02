@@ -11,8 +11,9 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="../img/favicon.ico" >
         <link rel="stylesheet" href="../css/styles.css" type="text/css"/>
+        <script type="text/javascript" src="../js/javascript.js"></script>
     </head>
-    <body>
+    <body onload="setValues('city','city'); setValues('genre','genre');">
         <div id='wrapper' class="wrapper">
             <header class="banner">
                 <img src="../img/banner.jpg" alt="banner"/>    
@@ -22,12 +23,12 @@ and open the template in the editor.
                 <section>
                     <div style="text-align: center;">
                         <h1>EN CARTELERA</h1>
+                        <label style="font-weight: bold;" for="city">Ciudad:</label>
+                        <input id="city" type="text" value=""/>
+                        <label style="font-weight: bold;" for="genre">Genero:</label>
+                        <input id="genre" type="text" value=""/>
                     </div>
                     <table border='1'>
-                        <tr>
-                            <th colspan="2">El planeta de los simios</th>
-                        </tr>
-
                         <tr>
                             <td><img src="img/planetaSimios2.jpg" alt="content1"/></td>
                             <td>

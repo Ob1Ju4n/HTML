@@ -23,7 +23,7 @@ and open the template in the editor.
             
             <div id="content" class="contentPane">
                 
-                <form id="contentForm" >
+                <form id="contentForm">
                     <div id="cinePane" class="categoryPane" style="float: left;">
                         <h1>
                             <a class="mainLinks" href="#cineModal">C I N E</a>
@@ -48,6 +48,7 @@ and open the template in the editor.
                             <p style="font-size: medium; text-align: justify; margin: 5px;">El teatro (del griego θέατρον, theatrón o «lugar para contemplar») es la rama del arte escénico relacionada con la actuación, que representa historias frente a una audiencia usando una combinación de discurso, gestos, escenografía, música, sonido y espectáculo. Es también el género literario que comprende las obras concebidas para un escenario, ante un público.</p>
                         </div>
                     </div>
+                    
                     <div id="cineModal" class="modalDialog">
                         <div style="text-align: center;">
                             <a href="#close" title="Cerrar" class="close">X</a>
@@ -56,7 +57,7 @@ and open the template in the editor.
                                 <tr>
                                     <td>Ciudad:</td>
                                     <td>
-                                        <select name="ciudad">
+                                        <select id="citySel" name="ciudad">
                                             <option value="0" selected="selected">--Seleccione una opción--</option>
                                             <option value="1">Bogotá</option>
                                             <option value="2">Barranquilla</option>
@@ -68,20 +69,21 @@ and open the template in the editor.
                                 <tr>
                                     <td>Seleccione el genero:</td>
                                     <td>
-                                        <input type="checkbox" name="a"/>Acción
-                                        <input type="checkbox" name="d"/>Drama
-                                        <input type="checkbox" name="t"/>Terror
+                                        <input type="radio" name="genre" value="a"/>Acción
+                                        <input type="radio" name="genre" value="d"/>Drama
+                                        <input type="radio" name="genre" value="t"/>Terror
                                     </td>
                                 </tr>
                                 <tr>
                                     <td colspan="2">
                                         <br/>
-                                        <button title="ir" type="submit" onclick="location.href = 'cine/cine.html';">Ir...</button>
+                                        <button title="ir" type="submit" formaction="#close" onclick="process_cine_request('genre')">Ir...</button>
                                     </td>
                                 </tr>
                             </table>
                         </div>
                     </div>
+                    
                 </form>
                 
             </div>
