@@ -13,7 +13,7 @@ and open the template in the editor.
         <link rel="stylesheet" href="../css/styles.css" type="text/css"/>
         <script type="text/javascript" src="../js/javascript.js"></script>
     </head>
-    <body onload="setValues('city','city'); setValues('genre','genre');">
+    <body>
         <div id='wrapper' class="wrapper">
             <header class="banner">
                 <img src="../img/banner.jpg" alt="banner"/>    
@@ -21,58 +21,107 @@ and open the template in the editor.
             
             <div id="mainContent" class="contentPane">
                 <section>
-                    <div style="text-align: center;">
+                    <div class="filterPane">
                         <h1>EN CARTELERA</h1>
-                        <label style="font-weight: bold;" for="city">Ciudad:</label>
-                        <input id="city" type="text" value=""/>
-                        <label style="font-weight: bold;" for="genre">Genero:</label>
-                        <input id="genre" type="text" value=""/>
+                        <label style="font-weight: bold;">Genero:</label>
+                        <input type="radio" name="genre" value="all" onclick="filter_by_genre()"/>Todos
+                        <input type="radio" name="genre" value="movieAccion" onclick="filter_by_genre()"/>Acción
+                        <input type="radio" name="genre" value="movieDrama" onclick="filter_by_genre()"/>Drama
+                        <input type="radio" name="genre" value="movieTerror" onclick="filter_by_genre()"/>Terror
                     </div>
-                    <table border='1'>
-                        <tr>
-                            <td><img src="img/planetaSimios2.jpg" alt="content1"/></td>
-                            <td>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo</p>
-                                <div style="text-align: center;">
-                                    <embed width="420" height="345" src="http://www.youtube.com/v/eq1sTNGDXo0" type="application/x-shockwave-flash">
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-
-                    <table border='1'>
-                        <tr>
-                            <th colspan="2">Guardians of the galaxy</th>
-                        </tr>
-
-                        <tr>
-                            <td><img src="img/guardiabs.jpg" alt="content2"/></td>
-                            <td>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo</p>
-                                <div style="text-align: center;">
-                                    <embed width="420" height="345" src="http://www.youtube.com/v/uvUMGJ66IfU" type="application/x-shockwave-flash">
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-
-                    <table border='1'>
-                        <tr>
-                            <th colspan="2">Into the storm</th>
-                        </tr>
-
-                        <tr>
-                            <td><img src="img/tornado.jpg" alt="content"/></td>
-                            <td>
-                                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo</p>
-                                <div style="text-align: center;">
-                                    <embed width="420" height="345" src="http://www.youtube.com/v/xBH25XxM-7g" type="application/x-shockwave-flash">
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
+                    
+                    <div class="movieAccion">
+                        <div class="movieSummary">
+                            <h2>El planeta de los simios</h2>
+                            <span style="display: inline-block; vertical-align: middle; height: 100%">
+                                <img style="max-width: 150px; max-height: 215px; vertical-align: middle;" src="img/planetaSimios2.jpg" alt="content1"/>
+                            </span>
+                        </div>
+                        <div style="height: 300px; padding:5px;">
+                            <p style="text-align: justify;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo</p>
+                            <div style="text-align: center;">
+                                <embed width="300" height="180" src="http://www.youtube.com/v/eq1sTNGDXo0" type="application/x-shockwave-flash">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="movieTerror">
+                        <div class="movieSummary">
+                            <h2>Libranos del mal</h2>
+                            <span style="display: inline-block; vertical-align: middle; height: 100%">
+                                <img style="max-width: 150px; max-height: 215px; vertical-align: middle;" src="img/deliverus.jpg" alt="content2"/>
+                            </span>
+                        </div>
+                        <div style="height: 300px; padding:5px;">
+                            <p style="text-align: justify;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo</p>
+                            <div style="text-align: center;">
+                                <embed width="300" height="180" src="http://www.youtube.com/v/eq1sTNGDXo0" type="application/x-shockwave-flash">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="movieAccion">
+                        <div class="movieSummary">
+                            <h2>Guardians of the galaxy</h2>
+                            <span style="display: inline-block; vertical-align: middle; height: 100%">
+                                <img style="max-width: 150px; max-height: 215px; vertical-align: middle;" src="img/guardians.jpg" alt="content2"/>
+                            </span>
+                        </div>
+                        <div style="height: 300px; padding:5px;">
+                            <p style="text-align: justify;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo</p>
+                            <div style="text-align: center;">
+                                <embed width="300" height="180" src="http://www.youtube.com/v/eq1sTNGDXo0" type="application/x-shockwave-flash">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="movieDrama">
+                        <div class="movieSummary">
+                            <h2>Camino</h2>
+                            <span style="display: inline-block; vertical-align: middle; height: 100%">
+                                <img style="max-width: 150px; max-height: 215px; vertical-align: middle;" src="img/camino.jpg" alt="content2"/>
+                            </span>
+                        </div>
+                        <div style="height: 300px; padding:5px;">
+                            <p style="text-align: justify;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo</p>
+                            <div style="text-align: center;">
+                                <embed width="300" height="180" src="http://www.youtube.com/v/eq1sTNGDXo0" type="application/x-shockwave-flash">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="movieTerror">
+                        <div class="movieSummary">
+                            <h2>Asi en la tierra como en el cielo</h2>
+                            <span style="display: inline-block; vertical-align: middle; height: 100%">
+                                <img style="max-width: 150px; max-height: 215px; vertical-align: middle;" src="img/asasb.jpg" alt="content2"/>
+                            </span>
+                        </div>
+                        <div style="height: 300px; padding:5px;">
+                            <p style="text-align: justify;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo</p>
+                            <div style="text-align: center;">
+                                <embed width="300" height="180" src="http://www.youtube.com/v/eq1sTNGDXo0" type="application/x-shockwave-flash">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="movieDrama">
+                        <div class="movieSummary">
+                            <h2>Si me quedo</h2>
+                            <span style="display: inline-block; vertical-align: middle; height: 100%">
+                                <img style="max-width: 150px; max-height: 215px; vertical-align: middle;" src="img/ifistay.jpg" alt="content2"/>
+                            </span>
+                        </div>
+                        <div style="height: 300px; padding:5px;">
+                            <p style="text-align: justify;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo</p>
+                            <div style="text-align: center;">
+                                <embed width="300" height="180" src="http://www.youtube.com/v/eq1sTNGDXo0" type="application/x-shockwave-flash">
+                            </div>
+                        </div>
+                    </div>
+                    
                 </section>
-                <section><h1>Proximamente ...</h1></section>
+                
             </div>
             
             <footer class="footer">

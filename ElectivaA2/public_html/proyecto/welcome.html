@@ -18,15 +18,20 @@ and open the template in the editor.
         <div class="wrapper" id="wrapper">
             
             <header class="banner">
-                <img src="img/banner.jpg" alt="banner"/>    
+                <img src="img/banner.jpg" alt="banner"/>
+                <div class="loginDiv">
+                    <a id="autenticar" href="#login" style="float: right">Ingresar</a>
+                    <span id="loginMsg" style="float: left; display: none;">Bienvenido anonymo</span>
+                </div>
             </header>
             
             <div id="content" class="contentPane">
                 
                 <form id="contentForm">
+                    
                     <div id="cinePane" class="categoryPane" style="float: left;">
                         <h1>
-                            <a class="mainLinks" href="#cineModal">C I N E</a>
+                            <a class="mainLinks" href="javascript:void(0)" onclick="redir('cine')">C I N E</a>
                         </h1>
                         <div style="max-height: 50%">
                             <p style="font-size: medium; text-align: justify; margin: 5px;">El cine (abreviatura de cinematógrafo o cinematografía) es la técnica y arte de proyectar fotogramas de forma rápida y sucesiva para crear la impresión de movimiento, mostrando algún vídeo (o de película, o film, o filme). La palabra «cine» designa también las salas de cine o sala de proyecciones en los cuales se proyectan las películas.</p>
@@ -34,7 +39,7 @@ and open the template in the editor.
                     </div>
                     <div id="musicPane" class="categoryPane" style="position: absolute; margin: auto; left:0; right: 0">
                         <h1>
-                            <a class="mainLinks" href="anylink" target="_blank">M U S I C A</a>
+                            <a class="mainLinks" href="javascript:void(0)" onclick="redir('musica')">M U S I C A</a>
                         </h1>
                         <div style="max-height: 50%">
                             <p style="font-size: medium; text-align: justify; margin: 5px;">Es, según la definición tradicional del término, el arte de organizar sensible y lógicamente una combinación coherente de sonidos y silencios utilizando los principios fundamentales de la melodía, la armonía y el ritmo, mediante la intervención de complejos procesos psico-anímicos.</p>
@@ -42,42 +47,33 @@ and open the template in the editor.
                     </div>
                     <div id="otherPane" class="categoryPane" style="float: right; ">
                         <h1>
-                            <a class="mainLinks" href="anylink" target="_blank">T E A T R O</a>
+                            <a class="mainLinks" href="javascript:void(0)" onclick="redir('teatro')">T E A T R O</a>
                         </h1>
                         <div style="max-height: 50%">
                             <p style="font-size: medium; text-align: justify; margin: 5px;">El teatro (del griego θέατρον, theatrón o «lugar para contemplar») es la rama del arte escénico relacionada con la actuación, que representa historias frente a una audiencia usando una combinación de discurso, gestos, escenografía, música, sonido y espectáculo. Es también el género literario que comprende las obras concebidas para un escenario, ante un público.</p>
                         </div>
                     </div>
                     
-                    <div id="cineModal" class="modalDialog">
+                    <div id="login" class="modalDialog">
                         <div style="text-align: center;">
                             <a href="#close" title="Cerrar" class="close">X</a>
-                            <h1>Filtro de ingreso:</h1>
-                            <table style="margin: 0 auto;">
+                            <h1>Login</h1>
+                            <table>
                                 <tr>
-                                    <td>Ciudad:</td>
+                                    <td>Usuario:</td>
                                     <td>
-                                        <select id="citySel" name="ciudad">
-                                            <option value="0" selected="selected">--Seleccione una opción--</option>
-                                            <option value="1">Bogotá</option>
-                                            <option value="2">Barranquilla</option>
-                                            <option value="3">Cali</option>
-                                            <option value="4">Medellín</option>
-                                        </select>
+                                        <input type="text" id="usr"/>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Seleccione el genero:</td>
+                                    <td>Contraseña:</td>
                                     <td>
-                                        <input type="radio" name="genre" value="a"/>Acción
-                                        <input type="radio" name="genre" value="d"/>Drama
-                                        <input type="radio" name="genre" value="t"/>Terror
+                                        <input type="password" id="pass"/>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2">
-                                        <br/>
-                                        <button title="ir" type="submit" formaction="#close" onclick="process_cine_request('genre')">Ir...</button>
+                                    <td colspan="2" style="width: 50%; margin: 0 auto; padding-top: 5px;">
+                                        <button type="reset" onclick="login()" style="min-width: 50px">Login</button>
                                     </td>
                                 </tr>
                             </table>

@@ -4,26 +4,10 @@
  * and open the template in the editor.
  */
 
-function process_cine_request(nombre){
-    
-    var rdioValue = get_selected_radio('genre');
-    crear_cookie_cine(nombre, rdioValue, 7);
-
-    var opt = get_selected_opt('citySel');
-    crear_cookie_cine(nombre, opt, 7);
-
-    window.open('cine/cine.html', '_blank');
-    
-}
-
-function crear_cookie_cine(nombre, valor, tiempo, dominio){
-   
-    var nombre_dominio = dominio ? ("; domain=" + dominio) : '' ;
-    document.cookie =  nombre +
-                       "=" + encodeURIComponent( valor ) +
-                       "; max-age=" + 60 * 60 *24 * tiempo +
-                       "; path=/" + nombre_dominio ;
-}
+/**
+ * Variables globales
+ */
+var auth = false;
 
 function get_selected_opt(selectId){
     
@@ -44,35 +28,67 @@ function get_selected_radio(radioGroup){
     
 }
 
-function setValues(varName, fieldId){
+function filter_by_genre(){
     
-    var inputValue = leer_cookie_cine(varName);
-    var input = document.getElementById(fieldId);
-    input.value = inputValue;
+    var activeClass = get_selected_radio('genre');
+    show('movieAccion');
+    show('movieDrama');
+    show('movieTerror');
     
+    if(activeClass === 'movieTerror'){
+        hide('movieDrama');
+        hide('movieAccion');
+    }else if(activeClass === 'movieDrama'){
+        hide('movieTerror');
+        hide('movieAccion');
+    }else if (activeClass === 'movieAccion'){
+        hide('movieDrama');
+        hide('movieTerror');
+    }
 }
 
-function leer_cookie_cine ( varName ){
+function hide(className){
     
-    var cookie_string = document.cookie;
-    if (cookie_string.length !== 0) {
-        var cookie_value = cookie_string.match (
-                        '(^|;)[\s]*' +varName +'=([^;]*)' 
-                        );
-        return decodeURIComponent ( cookie_value[2] ) ;
+    var nodeList = document.getElementsByClassName(className);
+    for (var i = 0; i < nodeList.length; i++) {
+        nodeList[i].style.display = 'none';
     }
-    return '' ;
+}
+
+function show(className){
+    var nodeList = document.getElementsByClassName(className);
+    for (var i = 0; i < nodeList.length; i++) {
+        nodeList[i].style.display = 'block';
+    }
+}
+
+function redir(optionName){
+    if(auth){
+        var url = "";
+        if(optionName === 'cine'){
+            url = "cine/cine.html";
+        }else if(optionName === 'musica'){
+            url = "musica/musica.html";
+        }else if(optionName === 'teatro'){
+            url = "teatro/teatro.html";
+        }
+        window.open(url, "_blank");
+    }else
+        alert('Usuario no autenticado');
 }
 
 function login(){
 
-    var nombre = prompt('Nombre de usuario:');
-    var pwd = prompt('Contraseña:');
-
+    var nombre = document.getElementById('usr').value;
+    var pwd = document.getElementById('pass').value;
     if (!(nombre === 'Alopez' && pwd === '123*')) {
-        location.href = 'error.html';
+        window.open('error.html', "_self");
+    }else{
+        auth = true;
+        window.location.hash = 'close';
+        document.body.innerHTML = document.body.innerHTML.replace('anonymo', nombre);
+        document.getElementById('autenticar').style.display = 'none';
+        document.getElementById('loginMsg').style.display = 'block';
     }
 
 }
-
-
