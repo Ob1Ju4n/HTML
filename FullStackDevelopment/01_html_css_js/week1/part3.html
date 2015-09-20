@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>No Style</title>
+    <style>
+        body{
+            font-family:"Arial", sans-serif;
+            font-weight: bold;
+        }
+
+        fieldset{
+            background:lightyellow;
+            border:10px solid yellow;
+            margin-bottom:10px;
+            width: 720px;
+        }
+
+        label{
+            width: 180px;
+            display:inline-block;
+            text-align: right;
+            vertical-align: top;
+        }
+
+
+        img{
+            font-size: small;
+            font-style: italic;
+        }
+
+        span{
+            text-align: center;
+            font-style: italic;
+            font-weight: normal;
+            vertical-align: top;
+            display: inline-block;
+            padding-left: 5px;
+            padding-right: 5px;
+            width: 40px;
+        }
+
+        textarea{
+            width:360px;
+            height:50px;
+        }
+
+        label:hover, input:hover{font-size: 40px}
+
+        #gendersrdio, #contactchks{
+            display: inline;
+            vertical-align: top;
+            font-weight: normal;
+        }
+
+        .multisellbl{
+            width:auto;
+            margin: 0px;
+        }
+
+    </style>
+    <script src="https://www.cse.ust.hk/~rossiter/dating_web_site.js"></script>
+</head>
+<body>
+    <h1>Please Enter Your Details For Our Dating Website!</h1>
+    <form action="https://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" method="post" enctype="multipart/form-data">
+        <fieldset id="profimg">
+            <legend>Your Face</legend>
+            <label for="fileUp">Your image: </label><input id="fileUp" type="file" required><br>
+            <label for="preview">Image preview: </label>
+            <img id="preview" src="" alt="no_image">
+        </fieldset>
+        <fieldset id="geninfo">
+            <legend>Your General Details</legend>
+            <label for="name">Name:</label><input id="name" name="name" type="text" placeholder="Your full name" required><br>
+            <label for="gendersrdio">Gender:</label>
+            <div id="gendersrdio">
+                <input id="male" name="sex" type="radio" required value="Male"><label class="multisellbl" for="male"> Male</label>
+                <input id="female" name="sex" type="radio" required value="Female"><label class="multisellbl" for="female"> Female</label><br>
+            </div>
+            <label for="age">Age:</label><input id="age" name="age" type="number" min="18" max="90" required><br>
+            <label for="dob">Date of birth:</label><input id="dob" name="dob" type="date"><br>
+            <label for="favcol">Favorite color:</label><input id="favcol" name="favcol" type="color"><br>
+            <label for="country">Which country:</label>
+            <select id="country" name="country" required>
+                <option value="def" selected></option>
+                <option value="Australia">Australia</option>
+                <option value="Bolivia">America</option>
+                <option value="Canada">Canada</option>
+                <option value="Colombia">Colombia</option>
+                <option value="Costa Rica">Costa Rica</option>
+            </select>
+        </fieldset>
+        <fieldset id="indicators">
+            <legend>Your Indicators</legend>
+            <label for="height">Height: </label>
+            <span>Short</span><input id="height" name="height" type="range" min="0" max="100"><span>Tall</span><br>
+            <label for="salary">Salary: </label>
+            <span>Poor</span><input id="salary" name="salary" type="range" min="0" max="100"><span>Rich</span><br>
+        </fieldset>
+        <fieldset id="contactinf">
+            <legend>Your Contact Information</legend>
+            <label for="mail">Email: </label><input id="mail" name="mail" type="email" required><br>
+            <label for="tel">Mobile: </label><input id="tel" name="tel" type="tel"><br>
+            <label for="address">Address: </label><textarea id="address" name="address" rows="3" cols="30"></textarea><br>
+            <label for="contactchks">Method to contact you:</label>
+            <div id="contactchks">
+                <input id="chkmail" name="chkmail" type="checkbox" value="email"><label class="multisellbl" for="chkmail">Email</label>
+                <input id="chkwsapp" name="chkwsapp" type="checkbox" value="wsapp"><label class="multisellbl" for="chkwsapp">Whatsapp</label>
+                <input id="chkchat" name="chkchat" type="checkbox" value="chat"><label class="multisellbl" for="chkchat">In-app chat</label>
+            </div>
+        </fieldset>
+        <input type="submit" value="Submit!"/>
+    </form>
+</body>
+</html>
