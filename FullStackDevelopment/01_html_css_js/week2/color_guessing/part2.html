@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Color Guessing - Part 2</title>
+    <script>
+        var ordered_colors = ["red","cyan","blue","darkblue","lightblue","purple","yellow","lime","magenta","white","silver","grey","black","orange","brown","maroon","green","olive"].sort();
+        var finished = false;
+        var target_guess;
+        var guesses = 0;
+
+        alert(ordered_colors.join(", "));
+
+        function do_game(){
+            var color_index = Math.floor(Math.random()*ordered_colors.length);
+            target_guess = ordered_colors[color_index].toLowerCase();
+            <!-- Line included for debugging purposes -->
+            <!-- Start -->
+            alert("The target color is: "+target_guess);
+            <!-- End -->
+
+            while(!finished){
+                user_guess = prompt("I'm thinking of a color among the following:\n\n"+ordered_colors.join(", ")+"\n\nIf you dare, type the color you think is the one I chose:");
+                user_guess = user_guess.toLowerCase();
+                guesses += 1;
+                finished = check_guess();
+            }
+
+
+
+        }
+
+        function check_guess(){
+            if(ordered_colors.indexOf(user_guess) < 0){
+                alert("You've not entered a color from the given list. Please make a new guess choosing one of the colors on the list.");
+                return false;
+            }else if( target_guess > user_guess ){
+                alert("Your selection is alphabetically below the mysterious color. Try again!");
+                return false;
+            }else if( target_guess < user_guess ){
+                alert("Your selection is alphabetically above the mysterious color. Try again!");
+                return false;
+            }else{
+                docBody = document.getElementsByTagName("body")[0];
+                docBody.style.background=target_guess;
+                alert("You guessed the right color!!!\n\nComputer chose: "+target_guess+"\nUser guess: "+user_guess+"\n\nIt took you "+guesses+" guesses.");
+                return true;
+            }
+        }
+    </script>
+</head>
+<body onload="do_game()">
+</body>
+</html>

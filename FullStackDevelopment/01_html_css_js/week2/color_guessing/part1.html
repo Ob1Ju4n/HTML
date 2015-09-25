@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Color Guessing - Part 1</title>
+    <script>
+        var ordered_colors = ["red","cyan","blue","darkblue","lightblue","purple","yellow","lime","magenta","white","silver","grey","black","orange","brown","maroon","green","olive"].sort();
+        var finished = false;
+        var target_guess;
+        var guesses = 0;
+
+        alert(ordered_colors.join(", "));
+
+        function do_game(){
+            var color_index = Math.floor(Math.random()*ordered_colors.length);
+            target_guess = ordered_colors[color_index];
+            <!-- Line included for debugging purposes -->
+            <!-- Start -->
+            alert("The target color is: "+target_guess.toUpperCase());
+            <!-- End -->
+
+            while(!finished){
+                user_guess = prompt("I'm thinking of a color among the following:\n\n"+ordered_colors.join(", ")+"\n\nIf you dare, type the color you think is the one I chose:");
+                guesses += 1;
+                if(target_guess.toUpperCase() == user_guess.toUpperCase()){
+                    alert("You guessed the right color!!!\n\nComputer chose: "+target_guess.toUpperCase()+"\nUser guess: "+user_guess.toUpperCase()+"\n\nIt took you "+guesses+" guesses.");
+                    finished = true;
+                }else
+                    <!-- Optional informative line -->
+                    <!-- Start -->
+                    alert("Not the correct answer. Try again.");
+                    <!-- END -->
+
+            }
+        }
+    </script>
+</head>
+<body onload="do_game()">
+</body>
+</html>
