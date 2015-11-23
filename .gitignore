@@ -36,3 +36,6 @@ Icon
 .Spotlight-V100
 .Trashes
 /ElectivaA2/nbproject/private/
+
+#Avoid submission of node_modules/
+node_modules/
