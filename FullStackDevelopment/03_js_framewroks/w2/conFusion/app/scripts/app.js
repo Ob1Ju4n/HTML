@@ -2,11 +2,11 @@
 angular.module('confusionApp', [])
 
     //Angular convention: Naming the controllers starting with a Capital letter.
-    .controller('MenuController', [ '$scope', function() {
+    .controller('MenuController', [ '$scope', function($scope) {
         $scope.tab = 1;
         $scope.filtText = '';
         $scope.showDetails = false;
-        var dishes=[
+        $scope.dishes=[
             {
                 name:'Uthapizza',
                 image: 'images/uthapizza.png',
