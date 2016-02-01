@@ -66,9 +66,22 @@ angular.module('confusionApp')
         };
     }])
 
-    .controller('DishDetailController', ['$scope', 'menuFactory', function($scope, menuFactory) {
+    /**
+     * ### Uncomment to use ngRoute ###
+    .controller('DishDetailController', ['$scope', '$routeParams', 'menuFactory', function($scope, $routeParams, menuFactory) {
 
-        $scope.dish = menuFactory.getDish(1);
+        $scope.dish = menuFactory.getDish(parseInt($routeParams.id, 10));
+        $scope.query = "";
+
+        $scope.order = function(predicate){
+            $scope.predicate = predicate;
+        };
+
+    }])
+    **/
+    .controller('DishDetailController', ['$scope', '$stateParams', 'menuFactory', function($scope, $stateParams, menuFactory) {
+
+        $scope.dish = menuFactory.getDish(parseInt($stateParams.id, 10));
         $scope.query = "";
 
         $scope.order = function(predicate){
