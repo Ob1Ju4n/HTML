@@ -39,3 +39,6 @@ Icon
 
 #Avoid submission of node_modules/
 node_modules/
+
+#Avoid submission of bower_components
+bower_components/
